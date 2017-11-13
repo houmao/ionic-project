@@ -1,0 +1,17 @@
+<ion-view view-title="低油量预警设置">
+  <ion-nav-bar class="bar-calm">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content>
+    <div class="text-center">
+      <p>低油量预警值设置</p>
+      <p>{{lowoil||8}}L</p>
+    </div>
+    <div class="row">
+      <div class="col">
+        <echarts2 id="main2" ng-click="fadein()" greet="sayHello(items)" options="option"></echarts2>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

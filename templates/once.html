@@ -1,0 +1,52 @@
+<ion-view view-title="单次用油记录">
+  <ion-nav-bar class="bar-calm">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+
+    <ion-nav-buttons side="left">
+      <button ui-sref="tab.helper" class="button button-calm icon ion-chevron-left">      汽车小助手
+      </button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content>
+    <div class="top-box" ng-if="!init">
+      <div class="row">
+        <div class="col col-30 text-center">
+          <p>加油评价</p>
+          <ionic-ratings ratingsobj='ratingsObject' index='0'></ionic-ratings>
+          <p>本次加油您满意吗？</p>
+        </div>
+        <div class="col col-30">
+          <p>加油日期：<span>{{item.name}}</span></p>
+          <p>加油费用：<span>250</span>元</p>
+          <p>参考加油量：<span>69L</span></p>
+          <p>加油站：<span>中国石化华力加油站(中江站)</span></p>
+          <p>加油地址：<span>申江路2885号，中国检察检疫附近</span></p>
+        </div>
+        <div class="col col-30">
+          <p>用油量：<span>{{item.value}}</span>升</p>
+          <p>平均速度：<span>90.2</span>km/h</p>
+          <p>平均消耗：<span>10.2L/100km</span></p>
+          <p>行驶里程：<span>468.6km</span></p>
+          <p>经济排名：<span>10%</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="row" ng-if="init">
+      <div class="col col-40 col-offset-10 text-center">
+        <p class="iconfont icon-jihuazongjie"></p>
+        加油总次数： <span>{{times}}</span>次
+      </div>
+      <div class="col col-40 text-center">
+        <p class="iconfont icon-jiayou"></p>
+        加油总量：<span>{{totalOil}}</span>L
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <echarts id="main" ng-click="fadein()" greet="sayHello(items)" options="option"></echarts>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>
